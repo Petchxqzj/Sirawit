@@ -4,6 +4,9 @@ use App\Http\Controllers\Admin\productController;
 use App\Http\Controllers\Admin\catagoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
+use App\Models\Category;
+use App\Models\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +24,10 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $c = Category::all();
+    $p = Product::all();
+    $u = User::all();
+    return view('dashboard',compact('c','p','u'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -37,7 +43,9 @@ Route::get('admin/user/index',[UserController::class,'user']) ->name('u.index');
 Route::get('admin/product/index',[productController::class,'product']) ->name('p.index');
 Route::get('admin/product/create',[productController::class,'create']) ->name('p.create');
 Route::post('admin/product/insert',[productController::class,'insert']);
-
+Route::get('admin/product/edit/{id}',[ProductController::class,'edit'])->name('p.edit');
+Route::post('admin/product/update/{id}',[ProductController::class,'update']);
+Route::get('admin/product/delete/{id}',[ProductController::class,'delete']);
 //เมนู Catagory
 Route::get('admin/catagory/index',[catagoryController::class,'index']) ->name('c.index');
 Route::get('admin/catagory/create',[catagoryController::class,'create']) ->name('c.create');

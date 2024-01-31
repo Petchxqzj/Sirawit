@@ -25,12 +25,13 @@
                                         <thead>
 
                                             <tr>
-                                                <th>date</th>
-                                                <th>order ID</th>
-                                                <th>name</th>
-                                                <th class="text-right">price</th>
-                                                <th class="text-right">quantity</th>
-                                                <th class="text-right">total</th>
+                                                <th>No</th>
+                                                <th>Name</th>
+                                                <th>Category</th>
+                                                <th>Image</th>
+                                                <th class="text-right">Price</th>
+                                                <th class="text-right">Quantity</th>
+                                                <th class="text-right">Total</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -38,6 +39,7 @@
                                             <tr>
                                                 <td>{{ $product->firstItem()+ $loop->index}}</td>
                                                 <td>{{ $pro->name}}</td>
+                                                <td>{{ $pro->category->name}}</td>
                                                 <td>
                                                     <img src="{{asset('backend/product/resize/'.$pro->image)}}">
                                                 </td>
@@ -46,9 +48,14 @@
                                                 <td>{{$pro->created_at}}</td>
                                                 <td>{{$pro->updated_at}}</td>
                                                 <td>
-                                                    <a href="#"><i class='bx bxs-edit'></i></a>
-                                                    <a href="#"><i class='bx bxs-trash'></i></a>
+                                                    <a href="{{ route('p.edit',$pro->product_id)}}"><i class='bx bxs-edit'></i></a>
+                                                    <a href="{{ url('admin/product/delete/'.$pro->product_id)}}"><i class='bx bxs-trash'></i></a>
                                                 </td>
+                                                <td>
+                                                    <a href="{{ url('admin/product/edit/'.$pro->product_id) }}"><i>แก้ไข</i></a>
+                                                    <a href="{{ url('admin/product/delete/'.$pro->product_id) }}"><i>ลบ</i></a>
+                                                 </td>
+
                                             </tr>
                                             @endforeach
                                         </tbody>
