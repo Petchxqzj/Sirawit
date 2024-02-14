@@ -1,100 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-	<title>Login</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="{{asset('authen/images/icons/favicon.ico')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('authen/vendor/bootstrap/css/bootstrap.min.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('authen/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('authen/fonts/iconic/css/material-design-iconic-font.min.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('authen/vendor/animate/animate.css')}}">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="{{asset('authen/vendor/css-hamburgers/hamburgers.min.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('authen/vendor/animsition/css/animsition.min.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('authen/vendor/select2/select2.min.css')}}">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="{{asset('authen/vendor/daterangepicker/daterangepicker.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('authen/css/util.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('authen/css/main.css')}}">
-<!--===============================================================================================-->
-</head>
-<body>
-	
-	<div class="limiter">
-		<div class="container-login100" style="background-image: url('authen/images/bg-01.jpg');">
-			<div class="wrap-login100">
-				<form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{asset('authen/fonts/icomoon/style.css')}}">
+
+    <link rel="stylesheet" href="{{asset('authen/css/owl.carousel.min.css')}}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{asset('authen/css/bootstrap.min.css')}}">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="{{asset('authen/css/style.css')}}">
+
+    <title>Sandee Cafe</title>
+  </head>
+  <body>
+
+
+  <div class="half">
+    <div class="bg order-1 order-md-2" style="background-image: url('authen/images/bg_1.jpg');"></div>
+    <div class="contents order-2 order-md-1">
+
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-6">
+            <div class="form-block">
+              <div class="text-center mb-5">
+              <h3><strong>Login</strong></h3>
+              <!-- <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p> -->
+              </div>
+              <form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
                 @csrf
-					<span class="login100-form-logo">
-						<i class="zmdi zmdi-landscape"></i>
-					</span>
+                <div class="form-group first">
+                  <label for="username">Username</label>
+                  <input type="text" name="username" class="form-control" placeholder="username" id="username">
+                </div>
+                <div class="form-group last mb-3">
+                  <label for="password">Password</label>
+                  <input type="password" name="password" class="form-control" placeholder="Your Password" id="password">
+                </div>
 
-					<span class="login100-form-title p-b-34 p-t-27">
-						Log in
-					</span>
+                <div class="d-sm-flex mb-5 align-items-center">
+                  <span class="ml-auto"><a href="{{ route('password.request') }}" class="forgot-pass">Forgot Password</a></span>
+                  <span class="ml-auto"><a href="{{ route('register') }}" class="forgot-pass">สมัครสมาชิกที่นี้</a></span>
 
-					<div class="wrap-input100 validate-input" data-validate = "Enter Username">
-						<input class="input100" type="text" name="username" placeholder="Username">
-						<span class="focus-input100" data-placeholder="&#xf207;"></span>
-					</div>
+                </div>
 
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="password" placeholder="Password">
-						<span class="focus-input100" data-placeholder="&#xf191;"></span>
-					</div>
+                <input type="submit" value="Log In" class="btn btn-block btn-primary">
 
-					
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							Login
-						</button>
-					</div>
 
-					<div class="text-center p-t-90">
-						<a class="txt1" href="{{ route('password.request') }}">
-							Forgot Password?
-						</a>
-					</div>
+  </div>
 
-                    <div class="text-center p-t-90">
-						<a class="txt1" href="{{ route('register') }}">
-							สมัครสมาชิกที่นี้
-						</a>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-	
 
-	<div id="dropDownSelect1"></div>
-	
-<!--===============================================================================================-->
-	<script src="{{asset('authen/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
-<!--===============================================================================================-->
-	<script src="{{asset('authen/vendor/animsition/js/animsition.min.js')}}"></script>
-<!--===============================================================================================-->
-	<script src="{{asset('authen/vendor/bootstrap/js/popper.js')}}"></script>
-	<script src="{{asset('authen/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
-<!--===============================================================================================-->
-	<script src="{{asset('authen/vendor/select2/select2.min.js')}}"></script>
-<!--===============================================================================================-->
-	<script src="{{asset('authen/vendor/daterangepicker/moment.min.js')}}"></script>
-	<script src="{{asset('authen/vendor/daterangepicker/daterangepicker.js')}}"></script>
-<!--===============================================================================================-->
-	<script src="{{asset('authen/vendor/countdowntime/countdowntime.js')}}"></script>
-<!--===============================================================================================-->
-	<script src="{{asset('authen/js/main.js')}}"></script>
 
-</body>
+    <script src="{{asset('authen/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{asset('authen/js/popper.min.js')}}"></script>
+    <script src="{{asset('authen/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('authen/js/main.js')}}"></script>
+  </body>
 </html>

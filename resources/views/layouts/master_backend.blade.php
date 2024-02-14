@@ -40,7 +40,7 @@
 
 
     <div class="page-wrapper">
-    
+
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
             <div class="header-mobile__bar">
@@ -64,7 +64,7 @@
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                               
+
                             <a href="table.html">
                                 <i class="fas fa-table"></i>Tables</a>
                         </li>
@@ -72,7 +72,7 @@
                             <a href="form.html">
                                 <i class="far fa-check-square"></i>Forms</a>
                         </li>
-                       
+
                         <li>
                             <a href="map.html">
                                 <i class="fas fa-map-marker-alt"></i>Maps</a>
@@ -93,7 +93,7 @@
                             </ul>
                         </li>
                         <li class="has-sub">
-                            
+
                             </ul>
                         </li>
                     </ul>
@@ -115,7 +115,7 @@
                         <li class="active has-sub">
                             <a class="js-arrow" href="{{url('/dashboard')}}">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                           
+
                         </li>
                         <li>
 
@@ -123,7 +123,7 @@
                             <a href="{{route('u.index')}}">
                                 <i class="fas fa-copy"></i>User</a>
                         </li>
-                         
+
                         <li>
                         <a href="{{route('p.index')}}">
                                 <i class="fas fa-copy"></i>Product</a>
@@ -132,9 +132,9 @@
                         <a href="{{route('c.index')}}">
                                 <i class="fas fa-copy"></i>Catagory</a>
                         </li>
-                        
-                       
-                        
+
+
+
                 </nav>
             </div>
         </aside>
@@ -148,12 +148,12 @@
                     <div class="container-fluid">
                         <div class="header-wrap">
                         <form  class="login-form" method="POST" action= "{{ route('logout') }}">
-                                
+
                                  </form>
-                            
+
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
-                                        
+
                                         <div class="content">
                                             <a class="js-acc-btn" href="#"> My Profile</a>
                                         </div>
@@ -166,7 +166,7 @@
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        
+
                                                         <a href="#">{{ Auth::user()->name }}</a>
                                                     </h5>
                                                     <span class="email">{{ Auth::user()->email }}</span>
@@ -179,15 +179,15 @@
                                             </a>
                                             <form  class="login-form" method="POST" action= "{{ route('logout') }}">
                                                         @csrf
-                                                   
+
 
                                                         <x-dropdown-link :href="route('logout')"
                                                 onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                                 {{ __('Log Out') }}
                                                         </x-dropdown-link>
-                                                    
-                                     
+
+
                                             </form>
                                             </div>
                                     </div>
@@ -201,7 +201,7 @@
 
             @yield('conten')
 
-           
+
             <!-- END PAGE CONTAINER-->
         </div>
 
@@ -227,7 +227,7 @@
     <script src="{{asset('backend/vendor/chartjs/Chart.bundle.min.js')}} "></script>
     <script src="{{asset('backend/vendor/select2/select2.min.js')}} ">
     </script>
- 
+
     <!-- Main JS-->
     <script src="{{asset('backend/js/main.js')}} "></script>
 
